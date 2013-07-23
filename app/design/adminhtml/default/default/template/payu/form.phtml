@@ -1,0 +1,24 @@
+<fieldset class="form-list">
+    <ul id="payment_form_snowpayu" style="display: none;">
+		<li>
+			<?php echo $this->__('You will be redirected to PayU website when you place an order.') ?>
+		</li>
+        <li>
+            <div class="input-box">
+                <label for="payment_cc_type"><?php echo $this->__('Payment Type') ?> <span class="required">*</span></label><br/>           
+				<select name="payment[cc_type]" id="payment_cc_type" class="required-entry">
+				<option value=""><?php echo $this->__("--Please Select--") ?></option>
+				
+	            <?php foreach($this->getEnabledPaymentTypes() as $payment) : ?>
+		
+	            	<?php if((bool) $payment->enable === TRUE && $this->checkIfPaymentIsEnabled((string) $payment->type)) : ?>
+					<option value="<?php echo (string) $payment->type ?>"><?php echo (string) $payment->name; ?></option>
+					<?php endif; ?>
+					
+				<?php endforeach; ?>
+				
+	            </select>
+			</div>
+        </li>
+    </ul>
+</fieldset>

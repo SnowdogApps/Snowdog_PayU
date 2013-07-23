@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Snowdog_PayU>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Snowdog_PayU>
+    </modules>
+</config>

@@ -1,0 +1,49 @@
+<?php
+/* @var $this Snowdog_PayU_Block_Form */
+?>
+
+<fieldset class="form-list">
+	<ul id="payment_form_snowpayu" style="display: none;">
+		<li>
+			<?php echo $this->__('You will be redirected to PayU website when you place an order.') ?>
+		</li>
+    <li>
+    	<div class="input-box">
+      	
+
+				<?php if (!$this->checkIfDisplayIconsAreEnabled()): ?>
+          
+              <label for="payment_cc_type"><?php echo $this->__('Payment Type') ?> <span class="required">*</span></label><br/> 
+          
+							<select name="payment[cc_type]" id="payment_cc_type" class="required-entry">
+							<option value=""><?php echo $this->__("--Please Select--") ?></option>
+				
+				            <?php foreach($this->getEnabledPaymentTypes() as $payment) : ?>
+		
+				            	<?php if((bool) $payment->enable === TRUE && $this->checkIfPaymentIsEnabled((string) $payment->type)) : ?>
+								<option value="<?php echo (string) $payment->type ?>"><?php echo (string) $payment->name; ?></option>
+								<?php endif; ?>
+					
+							<?php endforeach; ?>
+				
+	            </select>
+	
+				<?php else: ?>
+          <ul class="payment-images">
+					<?php foreach($this->getEnabledPaymentTypes() as $payment) : ?>
+		        <li>
+	        	<?php if((bool) $payment->enable === TRUE && $this->checkIfPaymentIsEnabled((string) $payment->type)) : ?>
+								<label for="payment_<?php echo (string) $payment->type ?>">
+									<img src="<?php echo $this->getSkinUrl('images/payu/' . (string) $payment->type . '.png', array('_package'=>'default', '_theme'=>'default')) ?>" alt="<?php echo (string) $payment->name; ?>" title="<?php echo (string) $payment->name; ?>" />
+								</label>
+								<input type="radio" id="payment_<?php echo (string) $payment->type ?>" value="<?php echo (string) $payment->type ?>" name="payment[cc_type]" />
+						<?php endif; ?>
+					  </li>
+					<?php endforeach; ?>			
+	        </ul>
+				<?php endif; ?>
+	
+			</div>
+		</li>
+	</ul>
+</fieldset>

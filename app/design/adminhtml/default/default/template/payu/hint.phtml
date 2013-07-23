@@ -1,0 +1,29 @@
+<style>
+	div.snowpayu-payment-notice {
+		background: #EAF0EE;
+		border: 1px solid #CCCCCC;
+		margin-bottom: 10px;
+		padding: 10px 5px 5px 10px;
+	}
+	span.snowpayu-field-heading {
+		width: 230px;
+		display: inline-block;
+		font-weight: bold;
+	}
+	span.snowpayu-field-value {
+		font-style: italic;
+	}
+	ul.snowpayu {
+		list-style: circle;
+		padding-left: 15px;
+	}
+</style>
+<div class="snowpayu-payment-notice">
+    <h4><?php echo $this->__("Konfiguracja w systemie PayU") ?></h4>
+	<div>
+		<?php echo $this->__("Aby korzystanie z płatności PayU było możliwe należy dokonać konfiguracji adresów URL.") ?>
+	</div>
+	<div><span class="snowpayu-field-heading"><?php echo $this->__("Adres powrotu błędnego:") ?></span><span class="snowpayu-field-value"><?php echo $this->getUrl("payu/response/failure?posid=%posId%&session_id=%sessionId%&error=%error%&") ?></span></div>
+	<div><span class="snowpayu-field-heading"><?php echo $this->__("Adres powrotu pozytywnego:") ?></span><span class="snowpayu-field-value"><?php echo $this->getUrl("payu/response/success?posid=%posId%&session_id=%sessionId%&") ?></span></div>
+	<div><span class="snowpayu-field-heading"><?php echo $this->__("Adres raportów:") ?></span><span class="snowpayu-field-value"><?php echo $this->getUrl("payu/response/report") ?></span></div>
+</div>

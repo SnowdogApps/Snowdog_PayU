@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+	<snowpayu_notification_failure>
+	    <reference name="root">
+	        <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+	    </reference>
+	    <reference name="content">
+	        <block type="snowpayu/failure" name="failure" template="snowpayu/failure.phtml" />
+	    </reference>
+	</snowpayu_notification_failure>
+
+</layout>

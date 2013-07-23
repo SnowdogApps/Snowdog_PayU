@@ -1,0 +1,8 @@
+app/code/community/Snowdog/PayU													app/code/community/Snowdog/PayU
+app/design/adminhtml/default/default/template/payu							app/design/adminhtml/default/default/template/payu
+app/design/frontend/base/default/layout/payu.xml							app/design/frontend/base/default/layout/payu.xml
+app/design/frontend/base/default/template/snowpayu							app/design/frontend/base/default/template/snowpayu
+app/etc/modules/Snowdog_PayU.xml													app/etc/modules/Snowdog_Payu.xml
+app/locale/pl_PL/Snowdog_PayU.csv												app/locale/pl_PL/Snowdog_PayU.csv
+app/locale/pl_PL/template/email/checkout_submit_email_template.html	app/locale/pl_PL/template/email/checkout_submit_email_template.html
+skin/frontend/base/default/images/payu											skin/frontend/base/default/images/payu			
